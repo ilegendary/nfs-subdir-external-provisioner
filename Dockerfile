@@ -12,10 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/distroless/static:latest
+FROM gcr.io/k8s-staging-sig-storage/nfs-subdir-external-provisioner:v4.0.0
 LABEL maintainers="Kubernetes Authors"
 LABEL description="NFS subdir external provisioner"
-ARG binary=./bin/nfs-subdir-external-provisioner
 
-COPY ${binary} /nfs-subdir-external-provisioner
 ENTRYPOINT ["/nfs-subdir-external-provisioner"]
